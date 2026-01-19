@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<title>Generador de Requisitos de Seguridad e Higiene por Tarea</title>
+
+<meta name="description" content="Conocé los requisitos mínimos de Seguridad e Higiene según la tarea y la provincia. Checklist legal para PYMES y contratistas en Argentina.">
+
+<meta name="keywords" content="seguridad e higiene, checklist seguridad, trabajo en altura, contratistas, SRT, ART, riesgos laborales">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  max-width: 820px;
+  margin: auto;
+  padding: 20px;
+}
+h1 {
+  margin-bottom: 5px;
+}
+select, button, input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+pre {
+  background: #f4f4f4;
+  padding: 15px;
+  white-space: pre-wrap;
+  border-left: 4px solid #0077cc;
+}
+.cta {
+  background: #e9f5ff;
+  padding: 15px;
+  margin-top: 20px;
+  border-left: 5px solid #0077cc;
+}
+.whatsapp {
+  background: #25D366;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+small {
+  color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🦺 Generador de Seguridad e Higiene</h1>
+<p>
+Herramienta gratuita para conocer los <strong>requisitos mínimos exigibles</strong> según la tarea y la ubicación.
+Orientado a <strong>PYMES, contratistas y responsables de obra</strong>.
+</p>
+
+<label>Tarea a realizar:</label>
+<select id="tarea">
+  <option value="">-- Seleccionar --</option>
+  <option value="altura">Trabajo en altura</option>
+  <option value="contratista">Ingreso de contratistas a obra</option>
+  <option value="electrico">Trabajos eléctricos</option>
+  <option value="confinado">Espacios confinados</option>
+  <option value="caliente">Soldadura / trabajos en caliente</option>
+</select>
+
+<label>Tipo de empresa:</label>
+<select id="empresa">
+  <option value="pyme">PYME / Monotributo</option>
+  <option value="obra">Empresa constructora</option>
+</select>
+
+<label>Provincia:</label>
+<select id="provincia">
+  <option value="nacional">Ámbito nacional</option>
+  <option value="Buenos Aires">Buenos Aires</option>
+  <option value="CABA">Ciudad Autónoma de Buenos Aires</option>
+  <option value="Catamarca">Catamarca</option>
+  <option value="Chaco">Chaco</option>
+  <option value="Chubut">Chubut</option>
+  <option value="Córdoba">Córdoba</option>
+  <option value="Corrientes">Corrientes</option>
+  <option value="Entre Ríos">Entre Ríos</option>
+  <option value="Formosa">Formosa</option>
+  <option value="Jujuy">Jujuy</option>
+  <option value="La Pampa">La Pampa</option>
+  <option value="La Rioja">La Rioja</option>
+  <option value="Mendoza">Mendoza</option>
+  <option value="Misiones">Misiones</option>
+  <option value="Neuquén">Neuquén</option>
+  <option value="Río Negro">Río Negro</option>
+  <option value="Salta">Salta</option>
+  <option value="San Juan">San Juan</option>
+  <option value="San Luis">San Luis</option>
+  <option value="Santa Cruz">Santa Cruz</option>
+  <option value="Santa Fe">Santa Fe</option>
+  <option value="Santiago del Estero">Santiago del Estero</option>
+  <option value="Tierra del Fuego">Tierra del Fuego</option>
+  <option value="Tucumán">Tucumán</option>
+</select>
+
+<button onclick="generar()">Generar requisitos</button>
+
+<pre id="resultado"></pre>
+
+<div class="cta">
+<h3>📩 ¿Necesitás el informe completo?</h3>
+
+<input type="email" placeholder="Dejá tu email (opcional)">
+
+<ul>
+<li>Checklist ampliado por tarea</li>
+<li>Normativa detallada aplicable</li>
+<li>Errores que generan multas</li>
+<li>Documentación exigible por inspección</li>
+</ul>
+
+<button class="whatsapp" onclick="contactar()">📲 Consultar por WhatsApp</button>
+
+<small>
+* La información es orientativa y no reemplaza el asesoramiento profesional.
+</small>
+</div>
+
+<script>
+function generar() {
+
+  const tarea = document.getElementById("tarea").value;
+  const empresa = document.getElementById("empresa").value;
+  const provincia = document.getElementById("provincia").value;
+
+  if(tarea === ""){
+    alert("Seleccioná una tarea");
+    return;
+  }
+
+  let r = "RESULTADO DEL ANÁLISIS\n\n";
+
+  if(tarea === "altura"){
+    r += "🔹 TRABAJO EN ALTURA\n\n";
+    r += "✔ Arnés de seguridad certificado\n";
+    r += "✔ Línea de vida / punto de anclaje\n";
+    r += "✔ Capacitación específica\n";
+    r += "✔ Permiso de trabajo\n";
+    r += "✔ Inspección previa del área\n\n";
+    r += "Normativa:\n";
+    r += "- Ley 19.587\n";
+    r += "- Decreto 351/79\n";
+    r += "- Resolución SRT 61/2023\n\n";
+    r += "⚠️ Error frecuente:\n";
+    r += "- Arnés sin sistema anticaídas\n\n";
+  }
+
+  if(tarea === "contratista"){
+    r += "🔹 INGRESO DE CONTRATISTAS\n\n";
+    r += "✔ ART vigente\n";
+    r += "✔ Seguro de vida obligatorio\n";
+    r += "✔ Inducción de seguridad documentada\n";
+    r += "✔ EPP según tarea\n";
+    r += "✔ Documentación habilitante\n\n";
+    r += "Normativa:\n";
+    r += "- Ley 24.557\n";
+    r += "- Decreto 911/96\n\n";
+    r += "⚠️ Error frecuente:\n";
+    r += "- Ingreso a obra sin inducción\n\n";
+  }
+
+  if(tarea === "electrico"){
+    r += "🔹 TRABAJOS ELÉCTRICOS\n\n";
+    r += "✔ Guantes dieléctricos\n";
+    r += "✔ Herramientas aisladas\n";
+    r += "✔ Bloqueo y etiquetado (LOTO)\n";
+    r += "✔ Señalización del área\n";
+    r += "✔ Capacitación específica\n\n";
+    r += "Normativa:\n";
+    r += "- Ley 19.587\n";
+    r += "- Decreto 351/79\n";
+    r += "- Resolución SRT 900/15\n\n";
+    r += "⚠️ Error frecuente:\n";
+    r += "- Trabajo con tensión sin bloqueo\n\n";
+  }
+
+  if(tarea === "confinado"){
+    r += "🔹 ESPACIOS CONFINADOS\n\n";
+    r += "✔ Permiso de trabajo específico\n";
+    r += "✔ Medición de atmósfera\n";
+    r += "✔ Ventilación forzada\n";
+    r += "✔ Observador externo\n";
+    r += "✔ Plan de rescate\n\n";
+    r += "Normativa:\n";
+    r += "- Ley 19.587\n";
+    r += "- Decreto 351/79\n\n";
+    r += "⚠️ Error frecuente:\n";
+    r += "- Ingreso sin medición previa\n\n";
+  }
+
+  if(tarea === "caliente"){
+    r += "🔹 TRABAJOS EN CALIENTE / SOLDADURA\n\n";
+    r += "✔ Permiso de trabajo en caliente\n";
+    r += "✔ Protección ocular y facial\n";
+    r += "✔ Guantes y ropa ignífuga\n";
+    r += "✔ Matafuegos operativos\n";
+    r += "✔ Aislamiento de combustibles\n\n";
+    r += "Normativa:\n";
+    r += "- Ley 19.587\n";
+    r += "- Decreto 351/79\n";
+    r += "- Decreto 911/96\n\n";
+    r += "⚠️ Error frecuente:\n";
+    r += "- Soldar sin control de incendio\n\n";
+  }
+
+  if(empresa === "pyme"){
+    r += "📌 Aclaración para PYMES:\n";
+    r += "- Las obligaciones aplican aunque tengas pocos empleados\n\n";
+  }
+
+  r += "📍 Provincia seleccionada: " + provincia + "\n";
+  r += "- Pueden existir exigencias adicionales locales\n\n";
+
+  document.getElementById("resultado").innerText = r;
+}
+
+function contactar(){
+  window.open(
+    "https://wa.me/5493512604113?text=Hola,%20quiero%20el%20informe%20completo%20de%20Seguridad%20e%20Higiene",
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
